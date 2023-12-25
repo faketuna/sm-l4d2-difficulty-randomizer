@@ -1,0 +1,4 @@
+/scripting/*
+!/scripting/l4d2_difficulty_randomizer.sp
+!/scripting/compiled
+.vscode

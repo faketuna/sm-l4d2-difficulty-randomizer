@@ -1,0 +1,97 @@
+"Phrases"
+{
+    "drand prefix"
+    {
+        "en"        "{orange}[DRAND] {default}"
+        "jp"        "{orange}[DRAND] {default}"
+    }
+    "drand plugin disabled"
+    {
+        "en"        "Plugin has disabled."
+        "jp"        "プラグインは無効化されています。"
+    }
+    "drand roulette starts in"
+    {
+        "#format"   "{1:d}"
+        "en"        "Roulette starts in {1} seconds."
+        "jp"        "あと{1}秒後にルーレットが開始されます。"
+    }
+    "drand max reroll reached"
+    {
+        "#format"   "{1:d}"
+        "en"        "You cannot reroll anymore in this map. Becuase reroll count has reached the maximum number of {blue}{1}{default}."
+        "jp"        "リロール制限の{blue}{1}{default}回に達したためこのマップでのこれ以上のリロールは行えません。"
+    }
+    "drand reroll starting"
+    {
+        "en"        "Starting reroll!"
+        "jp"        "リロールが開始されます!"
+    }
+    "drand reroll is in progress"
+    {
+        "en"        "Another reroll is in progress!"
+        "jp"        "現在別のリロールが進行中です!"
+    }
+    "drand new difficulty chosen easy"
+    {
+        "en"        "New difficulty chosen! difficulty updated to {blue}Easy!"
+        "jp"        "新しい難易度が選択されました! 新しい難易度は{blue}Easyです!"
+    }
+    "drand new difficulty chosen normal"
+    {
+        "en"        "New difficulty chosen! difficulty updated to {blue}Normal!"
+        "jp"        "新しい難易度が選択されました! 新しい難易度は{blue}Normalです!"
+    }
+    "drand new difficulty chosen advanced"
+    {
+        "en"        "New difficulty chosen! difficulty updated to {blue}Advanced!"
+        "jp"        "新しい難易度が選択されました! 新しい難易度は{blue}Advancedです!"
+    }
+    "drand new difficulty chosen expert"
+    {
+        "en"        "New difficulty chosen! difficulty updated to {blue}Expert!"
+        "jp"        "新しい難易度が選択されました! 新しい難易度は{blue}Expertです!"
+    }
+    "drand menu title"
+    {
+        "en"        "Difficulty randomizer setting menu"
+        "jp"        "Difficulty randomizer設定メニュー"
+    }
+    "drand menu disable sounds"
+    {
+        "en"        "Disable sounds: "
+        "jp"        "音声の無効化: "
+    }
+    "drand menu volume"
+    {
+        "en"        "Volume: "
+        "jp"        "音量: "
+    }
+    "drand cmd invalid arguments"
+    {
+        "en"        "Invalid arguments."
+        "jp"        "無効な引数です。"
+    }
+    "drand cmd value out of range"
+    {
+        "#format"   "{1:d},{2:d},{3:d}"
+        "en"        "{1} is out of range. Valid range: {2} ~ {3}"
+        "jp"        "{1}は範囲外の数値です。 有効な範囲: {2}～{3}"
+    }
+    "drand cmd set volume"
+    {
+        "#format"   "{1:s}"
+        "en"        "Difficulty randomizer sound volume set to {green}{1}%%{default}."
+        "jp"        "Difficulty randomizerの音声の音量を{green}{1}%%{default}に設定しました。"
+    }
+    "drand cmd toggle enable"
+    {
+        "en"        "Difficulty randomizer sound now {green}enabled{default}."
+        "jp"        "Difficulty randomizerの音声を{green}有効化{default}しました。"
+    }
+    "drand cmd toggle disable"
+    {
+        "en"        "Difficulty randomizer sound now {darkred}disabled{default}."
+        "jp"        "Difficulty randomizerの音声を{darkred}無効化{default}しました。"
+    }
+}
