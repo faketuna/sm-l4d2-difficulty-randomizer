@@ -29,7 +29,7 @@ This plugin is created by the author to make my server more chaos.
 * `sm_drand_win_weight_normal`          - Chance rate for difficulty Normal
 * `sm_drand_win_weight_advanced`        - Chance rate for difficulty Advanced
 * `sm_drand_win_weight_expert`          - Chance rate for difficulty Expert
-* `sm_drand_roulette_countdown_time`    - How many seconds to countdown for starting roulette after first player joined the game
+* `sm_drand_roulette_countdown_time`    - How many seconds to countdown for starting roulette after first player joined the game or Reroll command executed.
 * `sm_drand_roulette_sound_tick`        - Specify the ticking sound of roulette. Requires sound path include extension.
 * `sm_drand_roulette_sound_chosen`      - Specify the chosen sound of roulette. Requires sound path include extension.
 * `sm_drand_roulette_sound_countdown`   - Specify the countdown sound of roulette. Requires sound path include extension.

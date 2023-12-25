@@ -29,7 +29,7 @@
 * `sm_drand_win_weight_normal`          - 難易度Normalの出現する重さを設定します。
 * `sm_drand_win_weight_advanced`        - 難易度Advancedの出現する重さを設定します。
 * `sm_drand_win_weight_expert`          - 難易度Expertの出現する重さを設定します。
-* `sm_drand_roulette_countdown_time`    - 最初のプレイヤーが接続してからルーレットが開始されるまでに何秒間カウントダウンするかを設定します。
+* `sm_drand_roulette_countdown_time`    - 最初のプレイヤーが接続、もしくはリロールコマンドが実行された際にルーレットが開始されるまでに何秒間カウントダウンするかを設定します。
 * `sm_drand_roulette_sound_tick`        - ルーレットの抽選音を設定します。 拡張子を含んだ相対パスが必要です。
 * `sm_drand_roulette_sound_chosen`      - ルーレットの抽選が確定した音を設定します。 拡張子を含んだ相対パスが必要です
 * `sm_drand_roulette_sound_countdown`   - ルーレットのカウントダウン音を設定します。 拡張子を含んだ相対パスが必要です
