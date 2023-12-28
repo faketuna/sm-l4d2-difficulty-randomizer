@@ -122,6 +122,7 @@ public void OnPluginStart() {
 
     LoadTranslations("common.phrases");
     LoadTranslations("l4d2_difficulty_randomizer.phrases");
+    AutoExecConfig(true, "difficulty_randomizer");
 
     g_iTimesRerolled = 0;
     g_bIsRouletteRolling = false;
@@ -265,7 +266,7 @@ public void OnClientPutInServer(int client) {
     if(IsFakeClient(client)) return;
     if(!g_bPluginEnabled) return;
     if(g_bPlayerJoinedAfterMapInitialize) return;
-    
+
     g_bPlayerJoinedAfterMapInitialize = true;
 
     if(!g_bMapStartRoulette) return;
