@@ -1,4 +1,7 @@
 /scripting/*
 !/scripting/l4d2_difficulty_randomizer.sp
 !/scripting/compiled
+!/scripting/include/
+/scripting/include/*
+!/scripting/include/drand.inc
 .vscode

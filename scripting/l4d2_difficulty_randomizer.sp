@@ -131,6 +131,12 @@ public void OnPluginStart() {
     }
 }
 
+public APLRes AskPluginLoad2(Handle myself, bool late, char [] error, int err_max) {
+    CreateNative("StartRoulette", Native_StartRoulette);
+    return APLRes_Success;
+}
+
+
 public void OnClientCookiesCached(int client) {
     if (IsFakeClient(client)) return;
 
@@ -469,5 +475,27 @@ bool IsOnlyDicimal(char[] string) {
             return false;
         }
     }
+    return true;
+}
+
+public any Native_StartRoulette(Handle plugin, int numParams) {
+    int countdownTime = GetNativeCell(1);
+    bool ignoreLimit = GetNativeCell(2);
+
+    if(g_bIsRouletteRolling) {
+        return false;
+    }
+
+    if(g_iTimesRerolled >= g_iMaxReroll) {
+        if(!ignoreLimit) {
+            return false;
+        }
+    }
+
+    if(!countdownTime || countdownTime <= 0) {
+        countdownTime = 10;
+    }
+
+    CreateTimer(1.0, DelayedRouletteStartTimer, countdownTime);
     return true;
 }
