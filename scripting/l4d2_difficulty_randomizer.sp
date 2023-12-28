@@ -23,6 +23,7 @@
 
 ConVar 
     g_cvPluginEnabled,
+    g_cvMapStartRoulette,
     g_cvReroll,
     g_cvRouletteCountdownTime,
     g_cvWinWeightEasy,
@@ -47,6 +48,7 @@ int
 
 bool
     g_bPluginEnabled,
+    g_bMapStartRoulette,
     g_bPlayerJoinedAfterMapInitialize,
     g_bIsRouletteRolling;
 
@@ -83,6 +85,7 @@ public Plugin myinfo =
 public void OnPluginStart() {
     CreateConVar("sm_drand_version", PLUGIN_VERSION, "Plugin version", FCVAR_DONTRECORD);
     g_cvPluginEnabled           = CreateConVar("sm_drand_enabled", "1", "1 Enabled | 0 Disabled", FCVAR_NONE, true, 0.0, true, 1.0);
+    g_cvMapStartRoulette        = CreateConVar("sm_drand_map_start", "1", "Toggles map start auto roulette. 1 Enabled | 0 Disabled.", FCVAR_NONE, true, 0.0, true, 1.0);
     g_cvReroll                  = CreateConVar("sm_drand_reroll", "1", "How many times can be rerolled", FCVAR_NONE, true, 0.0, false);
     g_cvWinWeightEasy           = CreateConVar("sm_drand_win_wieght_easy", "25", "Win chance rate of Easy difficulty.", FCVAR_NONE, true, 0.0, true, 100.0);
     g_cvWinWeightNormal         = CreateConVar("sm_drand_win_wieght_normal", "25", "Win chance rate of Normal difficulty.", FCVAR_NONE, true, 0.0, true, 100.0);
@@ -96,6 +99,7 @@ public void OnPluginStart() {
     g_cvZDifficulty             = FindConVar("z_difficulty");
 
     g_cvPluginEnabled.AddChangeHook(OnCvarsChanged);
+    g_cvMapStartRoulette.AddChangeHook(OnCvarsChanged);
     g_cvReroll.AddChangeHook(OnCvarsChanged);
     g_cvWinWeightEasy.AddChangeHook(OnCvarsChanged);
     g_cvWinWeightNormal.AddChangeHook(OnCvarsChanged);
@@ -162,6 +166,7 @@ public void OnClientCookiesCached(int client) {
 
 void SyncConVarValues() {
     g_bPluginEnabled            = g_cvPluginEnabled.BoolValue;
+    g_bMapStartRoulette         = g_cvMapStartRoulette.BoolValue;
     g_iMaxReroll                = g_cvReroll.IntValue;
     g_iWinWeightEasy            = g_cvWinWeightEasy.IntValue;
     g_iWinWeightNormal          = g_cvWinWeightNormal.IntValue;
@@ -260,10 +265,12 @@ public void OnClientPutInServer(int client) {
     if(IsFakeClient(client)) return;
     if(!g_bPluginEnabled) return;
     if(g_bPlayerJoinedAfterMapInitialize) return;
+    
+    g_bPlayerJoinedAfterMapInitialize = true;
 
+    if(!g_bMapStartRoulette) return;
     g_bIsRouletteRolling = true;
     CreateTimer(1.0, DelayedRouletteStartTimer, g_iRouletteCountdownTime);
-    g_bPlayerJoinedAfterMapInitialize = true;
 }
 
 public Action DelayedRouletteStartTimer(Handle timer, int count) {
