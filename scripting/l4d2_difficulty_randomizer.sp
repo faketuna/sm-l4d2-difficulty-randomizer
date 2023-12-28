@@ -7,7 +7,7 @@
 #pragma newdecls required
 #pragma semicolon 1
 
-#define PLUGIN_VERSION "0.0.1"
+#define PLUGIN_VERSION "0.0.2"
 
 #define SOUND_VOLUME_MAX 100
 #define SOUND_VOLUME_MIN 0
